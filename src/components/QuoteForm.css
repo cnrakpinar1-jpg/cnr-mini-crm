@@ -1,0 +1,206 @@
+.quote-form-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 52px 32px 72px;
+}
+
+/* ── Header ── */
+.quote-form-header {
+  margin-bottom: 32px;
+}
+
+.quote-form-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.quote-form-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.7px;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.quote-form-subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Card ── */
+.quote-form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+}
+
+.quote-form-card-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.quote-form-card-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.quote-form-card-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Two-column row ── */
+.quote-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Field ── */
+.quote-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.quote-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.1px;
+}
+
+.quote-label-hint {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+/* ── Inputs ── */
+.quote-field input,
+.quote-field select,
+.quote-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fafafa;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.quote-field input::placeholder,
+.quote-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.quote-field input:focus,
+.quote-field select:focus,
+.quote-field textarea:focus {
+  border-color: var(--border-focus);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99 102 241 / 0.1);
+}
+
+.quote-field textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* ── Amount prefix ── */
+.input-prefix-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-with-prefix {
+  padding-left: 28px !important;
+}
+
+/* ── Submit button ── */
+.quote-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 24px;
+  margin-top: 28px;
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 8px rgba(99 102 241 / 0.35);
+  transition: opacity 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.quote-submit-btn:hover {
+  opacity: 0.92;
+  box-shadow: 0 6px 16px rgba(99 102 241 / 0.4);
+  transform: translateY(-1px);
+}
+
+.quote-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Footer note ── */
+.quote-form-footer-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .quote-form-page {
+    padding: 32px 16px 48px;
+  }
+
+  .quote-form-card {
+    padding: 24px 20px;
+  }
+
+  .quote-form-row {
+    grid-template-columns: 1fr;
+  }
+}

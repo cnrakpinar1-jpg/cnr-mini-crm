@@ -1,44 +1,49 @@
-# CNR Solutions Demo — Client Intake & Lead Tracking System
+# CNR Solutions Demo — Mini CRM
 
-A lightweight, portfolio-grade mini CRM built to demonstrate a complete client intake and lead management workflow. Clean SaaS-style UI, zero backend dependencies.
+**Client Intake, Lead Tracking & Quotes — in one lightweight tool.**
 
----
-
-## Overview
-
-Small businesses lose leads because there's no structured process for capturing and following up on inquiries. This tool solves that with a simple two-screen workflow: a public-facing intake form for clients, and a private admin dashboard for tracking every lead through to close.
+A mini CRM built for small businesses to manage client inquiries, track leads through a sales pipeline, and create and monitor quotes — all without a backend or database.
 
 ---
 
 ## Features
 
-**Intake Form**
-- Clean client-facing form with name, email, service type, and message fields
-- Live validation with inline error feedback
-- Animated submission flow with success confirmation
+**Client Intake Form**
+Capture new client inquiries with name, email, service type, and message. Live validation and a clean submission flow.
 
-**Admin Dashboard**
-- Stat cards: Total Leads, New, Contacted, Closed — with live conversion rate
-- Full leads table with client avatar, service tag, message preview, and submission date
-- One-click status updates (New → Contacted → Closed) directly in the table
-- Filter leads by status tab
-- Two-click delete confirmation to prevent accidents
-- Empty state handling
+**Lead Dashboard**
+Stat cards for Total Leads, New, Contacted, and Closed. Full table with status updates, filters, and two-click delete. Conversion rate tracked automatically.
+
+**Quote Tracker**
+Create quotes with client details, service description, amount, and expiry date. Track each quote from Draft → Sent → Won / Lost. Summary cards for total value and win rate.
 
 **General**
-- All data persisted in `localStorage` — no backend or database required
-- Fully responsive layout
-- Portfolio demo banner for context when sharing with clients
+- All data persisted in `localStorage` — no backend required
+- State-based view switching — no router
+- Clean SaaS-style UI with consistent design system
+- Fully responsive
+
+---
+
+## System Overview
+
+The app combines three workflows into a single interface:
+
+1. **Intake** — A client submits an inquiry via the intake form
+2. **Lead Tracking** — The inquiry becomes a lead, tracked through New → Contacted → Closed
+3. **Quotes** — A quote is created for the client and managed through its own status pipeline
+
+Each module is independent but shares the same design language and sidebar navigation.
 
 ---
 
 ## Screenshots
 
-| Intake Form | Admin Dashboard |
-|---|---|
-| *(screenshot)* | *(screenshot)* |
+| Intake Form | Leads Dashboard | Quotes Dashboard |
+|---|---|---|
+| *(screenshot)* | *(screenshot)* | *(screenshot)* |
 
-> To add screenshots: run the app locally, capture each view, and save to `/screenshots`.
+> Run the app locally, capture each view, and save to `/screenshots`.
 
 ---
 
@@ -46,20 +51,32 @@ Small businesses lose leads because there's no structured process for capturing 
 
 | Layer | Choice |
 |---|---|
-| Framework | React 18 |
-| Bundler | Vite |
-| Styling | Plain CSS with custom properties |
+| Framework | React 18 (Vite) |
+| Styling | Plain CSS — custom properties, no UI library |
 | Storage | Browser `localStorage` |
+| Routing | `useState` view switching |
 | Fonts | Inter (Google Fonts) |
 | Icons | Inline SVG |
 
-No UI libraries, no external state managers, no backend — intentionally lightweight.
+No UI library. No state manager. No backend. Intentionally lightweight.
 
 ---
 
-## Run Locally
+## Use Case
 
-**Requirements:** Node.js 18+
+Built for **freelancers and small service businesses** — agencies, consultants, designers — who need a simple internal tool to:
+
+- Capture inbound inquiries in one place
+- Track every lead through to close
+- Create and follow up on quotes without a spreadsheet
+
+Not a replacement for HubSpot. A replacement for nothing at all.
+
+---
+
+## How to Run
+
+Requires Node.js 18+.
 
 ```bash
 git clone https://github.com/your-username/client-intake-mini-crm.git
@@ -68,44 +85,12 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173).
 
 ```bash
-# Production build
-npm run build
-npm run preview
+npm run build    # production build
+npm run preview  # preview the build locally
 ```
-
----
-
-## Use Case
-
-Built for **freelancers and small service businesses** who need a simple way to:
-
-- Capture inbound client inquiries from a website or shared link
-- Keep every lead in one place instead of scattered across email or DMs
-- Track where each prospect is in the sales process
-- Know at a glance how many leads are active vs. closed
-
-This fits agencies, consultants, designers, and any service provider managing a handful of leads per week without needing a full CRM like HubSpot or Salesforce.
-
----
-
-## Why It Matters
-
-Most small businesses have no system for lead management. Inquiries come in through email, social media, or referrals — and get lost. Without a clear pipeline:
-
-- Follow-ups are missed
-- It's impossible to measure conversion
-- No historical record exists for past clients
-
-This tool introduces the minimum viable process: **capture, track, close**. The dashboard gives an immediate view of pipeline health, and the status workflow creates accountability without adding complexity.
-
----
-
-## Project Status
-
-Portfolio demo — functional with local storage. Production extension points: swap `localStorage` for a REST API or Supabase, add authentication for the admin dashboard, and embed the intake form as an iframe on any website.
 
 ---
 

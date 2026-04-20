@@ -121,6 +121,14 @@
   gap: 2px;
 }
 
+.nav-section {
+  margin-bottom: 20px;
+}
+
+.nav-section:last-child {
+  margin-bottom: 0;
+}
+
 .nav-section-label {
   font-size: 10px;
   font-weight: 600;

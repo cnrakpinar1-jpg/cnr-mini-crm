@@ -1,11 +1,24 @@
 import { useState } from 'react'
 import IntakeForm from './components/IntakeForm'
 import Dashboard from './components/Dashboard'
+import QuoteForm from './components/QuoteForm'
+import QuotesDashboard from './components/QuotesDashboard'
 import './App.css'
 
-const NAV_ITEMS = [
-  { id: 'form', label: 'Intake Form', icon: <FormIcon /> },
-  { id: 'dashboard', label: 'Dashboard', icon: <DashboardIcon /> },
+const NAV_SECTIONS = [
+  {
+    label: 'Leads',
+    items: [
+      { id: 'form',      label: 'Intake Form',    icon: <FormIcon /> },
+      { id: 'dashboard', label: 'Leads Dashboard', icon: <DashboardIcon /> },
+    ],
+  },
+  {
+    label: 'Quotes',
+    items: [
+      { id: 'quotes', label: 'Quotes Dashboard', icon: <QuoteListIcon /> },
+    ],
+  },
 ]
 
 export default function App() {
@@ -25,16 +38,20 @@ export default function App() {
         </div>
 
         <nav className="sidebar-nav">
-          <p className="nav-section-label">Navigation</p>
-          {NAV_ITEMS.map(item => (
-            <button
-              key={item.id}
-              className={`nav-item ${view === item.id ? 'active' : ''}`}
-              onClick={() => setView(item.id)}
-            >
-              <span className="nav-icon">{item.icon}</span>
-              <span>{item.label}</span>
-            </button>
+          {NAV_SECTIONS.map(section => (
+            <div key={section.label} className="nav-section">
+              <p className="nav-section-label">{section.label}</p>
+              {section.items.map(item => (
+                <button
+                  key={item.id}
+                  className={`nav-item ${view === item.id ? 'active' : ''}`}
+                  onClick={() => setView(item.id)}
+                >
+                  <span className="nav-icon">{item.icon}</span>
+                  <span>{item.label}</span>
+                </button>
+              ))}
+            </div>
           ))}
         </nav>
 
@@ -56,11 +73,10 @@ export default function App() {
           </span>
         </div>
         <main className="main-content">
-          {view === 'form' ? (
-            <IntakeForm onSubmitSuccess={() => setView('dashboard')} />
-          ) : (
-            <Dashboard />
-          )}
+          {view === 'form'       && <IntakeForm onSubmitSuccess={() => setView('dashboard')} />}
+          {view === 'dashboard'  && <Dashboard />}
+          {view === 'quote-form' && <QuoteForm onSubmitSuccess={() => setView('quotes')} />}
+          {view === 'quotes'     && <QuotesDashboard onAddQuote={() => setView('quote-form')} />}
         </main>
       </div>
     </div>
@@ -86,6 +102,28 @@ function DashboardIcon() {
       <rect x="14" y="3" width="7" height="7" />
       <rect x="14" y="14" width="7" height="7" />
       <rect x="3" y="14" width="7" height="7" />
+    </svg>
+  )
+}
+
+function QuoteFormIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19" />
+      <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  )
+}
+
+function QuoteListIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="8" y1="6" x2="21" y2="6" />
+      <line x1="8" y1="12" x2="21" y2="12" />
+      <line x1="8" y1="18" x2="21" y2="18" />
+      <line x1="3" y1="6" x2="3.01" y2="6" />
+      <line x1="3" y1="12" x2="3.01" y2="12" />
+      <line x1="3" y1="18" x2="3.01" y2="18" />
     </svg>
   )
 }
