@@ -39,11 +39,17 @@ Each module is independent but shares the same design language and sidebar navig
 
 ## Screenshots
 
-| Intake Form | Leads Dashboard | Quotes Dashboard |
-|---|---|---|
-| *(screenshot)* | *(screenshot)* | *(screenshot)* |
+**Intake Form**
+![Intake Form](public/screenshots/intake-form.png)
 
-> Run the app locally, capture each view, and save to `/screenshots`.
+**Lead Dashboard**
+![Lead Dashboard](public/screenshots/lead-dashboard.png)
+
+**New Quote**
+![New Quote](public/screenshots/new-quote.png)
+
+**Quote Tracker**
+![Quote Tracker](public/screenshots/quote-tracker.png)
 
 ---
 
