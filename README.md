@@ -1,39 +1,39 @@
-# CNR Solutions Demo — Mini CRM
+# CNR Mini CRM — Client Intake, Lead Tracking & Quote Management
 
-**Client Intake, Lead Tracking & Quotes — in one lightweight tool.**
+**A lightweight Mini CRM for freelancers and small businesses.**
 
-A mini CRM built for small businesses to manage client inquiries, track leads through a sales pipeline, and create and monitor quotes — all without a backend or database.
+Manage your entire sales pipeline in one place — from the first client inquiry, through lead tracking, to sending and closing quotes. No backend, no database, no bloat.
 
 ---
 
 ## Features
 
 **Client Intake Form**
-Capture new client inquiries with name, email, service type, and message. Live validation and a clean submission flow.
+Capture new client inquiries with name, email, service type, and message. Live validation and a clean submission flow that feeds directly into the lead pipeline.
 
 **Lead Dashboard**
-Stat cards for Total Leads, New, Contacted, and Closed. Full table with status updates, filters, and two-click delete. Conversion rate tracked automatically.
+Stat cards for Total Leads, New, Contacted, and Closed. Full table with inline status updates, status filters, and two-click delete. Conversion rate calculated automatically.
 
 **Quote Tracker**
-Create quotes with client details, service description, amount, and expiry date. Track each quote from Draft → Sent → Won / Lost. Summary cards for total value and win rate.
+Create quotes with client details, service description, amount, and expiry date. Track each quote through Draft → Sent → Accepted / Rejected. Summary cards for total pipeline value and acceptance rate.
 
 **General**
 - All data persisted in `localStorage` — no backend required
 - State-based view switching — no router
-- Clean SaaS-style UI with consistent design system
+- Clean SaaS-style UI with a consistent design system
 - Fully responsive
 
 ---
 
 ## System Overview
 
-The app combines three workflows into a single interface:
+CNR Mini CRM combines three modules into a single, unified interface:
 
-1. **Intake** — A client submits an inquiry via the intake form
-2. **Lead Tracking** — The inquiry becomes a lead, tracked through New → Contacted → Closed
-3. **Quotes** — A quote is created for the client and managed through its own status pipeline
+1. **Intake** — Capture inbound client inquiries via the intake form
+2. **Lead Tracking** — Convert inquiries into leads and move them through New → Contacted → Closed
+3. **Quote Management** — Create quotes for leads and track them from Draft through to Accepted or Rejected
 
-Each module is independent but shares the same design language and sidebar navigation.
+Each module is independent but shares the same design language and sidebar navigation. The workflow is designed to take a prospect from first contact to closed deal without switching tools.
 
 ---
 
@@ -64,13 +64,14 @@ No UI library. No state manager. No backend. Intentionally lightweight.
 
 ## Use Case
 
-Built for **freelancers and small service businesses** — agencies, consultants, designers — who need a simple internal tool to:
+Built for **freelancers and small service businesses** — consultants, designers, agencies — who need a structured way to manage their sales pipeline without the overhead of a full CRM.
 
-- Capture inbound inquiries in one place
-- Track every lead through to close
-- Create and follow up on quotes without a spreadsheet
+- Replace scattered emails and DMs with a single intake flow
+- Track every lead from first contact to close
+- Send and monitor quotes without juggling spreadsheets
+- Know at a glance how many leads are active and how much pipeline value is open
 
-Not a replacement for HubSpot. A replacement for nothing at all.
+Not a replacement for HubSpot or Salesforce. A replacement for having no system at all.
 
 ---
 
@@ -79,8 +80,8 @@ Not a replacement for HubSpot. A replacement for nothing at all.
 Requires Node.js 18+.
 
 ```bash
-git clone https://github.com/your-username/client-intake-mini-crm.git
-cd client-intake-mini-crm
+git clone https://github.com/cnrakpinar1-jpg/cnr-mini-crm.git
+cd cnr-mini-crm
 npm install
 npm run dev
 ```
