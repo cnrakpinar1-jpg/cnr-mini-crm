@@ -101,4 +101,19 @@ npm run preview  # preview the build locally
 
 ---
 
+## GitHub Pages Deployment
+
+This repo is built with Vite and is configured for deployment at the project subpath:
+
+`https://cnrakpinar1-jpg.github.io/cnr-mini-crm/`
+
+### Deployment Steps
+
+1. Push changes to the `main` branch.
+2. In **Settings > Pages**, enable GitHub Pages for this repository.
+3. Set the source to **GitHub Actions** to use the included `.github/workflows/deploy-pages.yml` workflow.
+4. The workflow installs dependencies, builds the app with the correct `/cnr-mini-crm/` base path, and publishes the static `dist` output.
+
+---
+
 *Built by CNR Solutions*
